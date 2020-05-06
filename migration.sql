@@ -5,9 +5,12 @@ DROP TABLE IF EXISTS users;
 
 CREATE TABLE users (
     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    username VARCHAR(240) NOT NULL,
-    email VARCHAR(240) NOT NULL,
+    username VARCHAR(240) NOT NULL UNIQUE,
+    first_name VARCHAR(50) NOT NULL,
+    last_name VARCHAR(50) NOT NULL,
+    email VARCHAR(240) NOT NULL UNIQUE,
     password VARCHAR(255) NOT NULL,
+    phone_number VARCHAR(20) NOT NULL,
     PRIMARY KEY (id)
 );
 
