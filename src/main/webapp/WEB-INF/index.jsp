@@ -29,7 +29,6 @@
                 <p>${ad.category}</p>
                 <h4>Description</h4>
                 <p>${ad.description}</p>
-
             </div>
         </a>
         </c:forEach>

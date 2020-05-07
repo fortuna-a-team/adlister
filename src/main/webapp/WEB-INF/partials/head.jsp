@@ -1,2 +1,9 @@
 <title>${param.title}</title>
-<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<%-- ---- LINK TO GOOGLE FONTS ---- --%>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Lato:ital,wght@0,400;0,900;1,400&display=swap"
+      rel="stylesheet">
+
+<%-- ---- LINK TO CSS STYLESHEET ---- --%>
+<style type="text/css">
+    <%@ include file="/css/adlister.css" %>
+</style>

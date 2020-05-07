@@ -6,54 +6,62 @@
     </jsp:include>
 </head>
 <body>
-<div class="container">
-    <h1>Create a new Ad</h1>
 
-    <%---------CREATE AD FORM--------%>
-    <form action="/ads/create" method="post">
+<header>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+</header>
 
-        <%---------AD TITLE--------%>
-        <div class="form-group">
-            <label for="title">Title</label>
-            <input id="title" name="title" class="form-control" type="text">
-        </div>
+<article id="create-ad">
+    <section id="create-form">
+        <h1>Create a new Ad</h1>
 
-        <%---------AD PRICE--------%>
-        <div class="form-group">
-            <label for="price">Price</label>
-            <input id="price" name="price" class="form-control" type="text">
-        </div>
+        <%---------CREATE AD FORM--------%>
+        <form action="/ads/create" method="post">
 
-        <%---------AD CATEGORY--------%>
-        <div class="form-group">
-            <label for="category">Category</label>
-            <input id="category" name="category" class="form-control" type="text">
-        </div>
+            <%---------AD TITLE--------%>
+            <div class="form-group">
+                <label for="title">Title</label>
+                <input id="title" name="title" class="form-control" type="text">
+            </div>
 
-        <%---------AD LOCATION--------%>
-        <div class="form-group">
-            <label for="location">Location</label>
-            <input id="location" name="location" class="form-control" type="text">
-        </div>
+            <%---------AD PRICE--------%>
+            <div class="form-group">
+                <label for="price">Price</label>
+                <input id="price" name="price" class="form-control" type="text">
+            </div>
 
-        <%---------AD CONDITION--------%>
-        <div class="form-group">
-            <label for="item_condition">Select item condition</label>
-            <select name="item_condition" id="item_condition" class="form-control">
-                <option value="used" selected="selected">Used</option>
-                <option value="new">New</option>
-            </select>
-        </div>
+            <%---------AD CATEGORY--------%>
+            <div class="form-group">
+                <label for="category">Category</label>
+                <input id="category" name="category" class="form-control" type="text">
+            </div>
 
-        <%---------AD DESCRIPTION--------%>
-        <div class="form-group">
-            <label for="description">Description</label>
-            <textarea id="description" name="description" class="form-control" type="text"></textarea>
-        </div>
+            <%---------AD LOCATION--------%>
+            <div class="form-group">
+                <label for="location">Location</label>
+                <input id="location" name="location" class="form-control" type="text">
+            </div>
 
-        <%---------AD SUBMIT BUTTON--------%>
-        <input type="submit" class="btn btn-block btn-primary">
-    </form>
-</div>
+            <%---------AD CONDITION--------%>
+            <div class="form-group">
+                <label for="item_condition">Select item condition</label>
+                <select name="item_condition" id="item_condition" class="form-control">
+                    <option value="used" selected="selected">Used</option>
+                    <option value="new">New</option>
+                </select>
+            </div>
+
+            <%---------AD DESCRIPTION--------%>
+            <div class="form-group">
+                <label for="description">Description</label>
+                <textarea id="description" name="description" class="form-control" type="text"></textarea>
+            </div>
+
+            <%---------AD SUBMIT BUTTON--------%>
+            <input type="submit" class="btn btn-block btn-primary">
+        </form>
+    </section>
+</article>
+
 </body>
 </html>
