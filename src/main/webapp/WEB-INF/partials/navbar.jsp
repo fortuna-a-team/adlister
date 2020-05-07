@@ -7,18 +7,20 @@
         <%----- HOME NAV LINK -----%>
         <li><a href="${pageContext.request.contextPath}/">Home</a></li>
 
+        <%----- ADS NAV LINK -----%>
+        <li><a href="${pageContext.request.contextPath}/ads">Ad Listings</a></li>
+
         <%----- LOGIN / LOGOUT CONDITIONAL -----%>
         <c:choose>
             <c:when test="${user == null}">
                 <li><a href="${pageContext.request.contextPath}/login">Login</a></li>
             </c:when>
             <c:otherwise>
+                <li><a href="${pageContext.request.contextPath}/profile" id="profile-link">Profile</a></li>
                 <li><a href="${pageContext.request.contextPath}/logout" id="logout-link">Logout</a></li>
             </c:otherwise>
         </c:choose>
 
-        <%----- ADS NAV LINK -----%>
-        <li><a href="${pageContext.request.contextPath}/ads">Ad Listings</a></li>
     </ul>
 </nav>
 

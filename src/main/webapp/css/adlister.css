@@ -1,10 +1,22 @@
-*{
+:root {
+    --yellow-color: #f2dc50;
+    --lightBlue-color: #d6efff;
+    --blue-color: #788bff;
+    --white-color: #f7fff7;
+    --red-color: #ff6b6b;
 
+    /*font-family: 'Lato', sans-serif;*/
+    /*font-family: 'DM Serif Text', serif;*/
 }
 
+/*---------------------------------------------------------*/
+/*----------------------INDEX (HOME) PAGE------------------*/
+/*---------------------------------------------------------*/
 body{
     margin: 0;
     padding: 0;
+    font-family: 'Lato', sans-serif;
+    background: var(--white-color);
 }
 
 .content-body{
@@ -19,7 +31,7 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 30px;
-    background-color: #333;
+    background-color: var(--blue-color);
 
     display: flex;
     flex-direction: column;
@@ -35,18 +47,18 @@ li {
 
 li a {
     display: block;
-    color: white;
+    color: var(--white-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
 li a:hover {
-    background-color: #111;
+    background-color: var(--lightBlue-color);
 }
 
 #logout-link{
-    color: #de5246;
+    color: var(--red-color);
 }
 
 /*-----------SEARCH NAVBAR------------*/
@@ -55,7 +67,7 @@ li a:hover {
     width: 300px;
     margin: 20px;
     float: right;
-    border: lightgrey solid 1px;
+    border: var(--lightBlue-color) solid 1px;
 }
 .search-navbar{
     position: fixed;
@@ -87,7 +99,7 @@ input[type="text"],input[type="password"] {
     width: 309px;
     height: 35px;
     margin: 30px auto;
-    background: #fff;
+    background: var(--white-color);
     border: 0px;
     padding: 5px;
     font-size: 16px;
@@ -98,16 +110,16 @@ input[type="text"],input[type="password"] {
 }
 
 input[type="text"]:focus, input[type="password"]:focus{
-    border: 2px solid #1abc9d
+    border: 2px solid var(--yellow-color);
 }
 
 input[type="submit"]{
     display: block;
-    background: #1abc9d;
+    background: var(--yellow-color);
     width: 314px;
     padding: 12px;
     cursor: pointer;
-    color: #fff;
+    color: var(--white-color);
     border: 0px;
     margin: auto;
     border-radius: 5px;
@@ -118,7 +130,8 @@ input[type="submit"]{
 }
 
 input[type="submit"]:hover{
-    background: #09cca6
+    background: var(--lightBlue-color);
+    color: var(--blue-color);
 }
 
 
@@ -141,15 +154,15 @@ input[type="submit"]:hover{
 }
 
 .login-section{
-    color: white;
-    background: #333;
+    color: var(--white-color);
+    background: var(--blue-color);
     padding: 180px 50px;
 }
 
 
 /*-----------HELLO WORLD SECTION------------*/
 .hello-world-section{
-    background: whitesmoke;
+    background: var(--lightBlue-color);
     padding: 150px 50px;
 }
 .hello-world-section h1{
@@ -192,11 +205,32 @@ input[type="submit"]:hover{
     height: 150px;
     width: auto;
 }
-.user-profile{
+.user-profile, .personal-ad-listings{
     margin: 100px 50px;
     width: 500px;
 }
 #profile-header{
-    margin: 50px 50px;
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+    color: var(--blue-color);
+    font-family: 'DM Serif Text', serif;
+    line-height: calc(30px + (51 - 30) * ((100vw - 300px) / (1600 - 300)));
+}
+.ad-card{
+    height: 200px;
+    width: 300px;
+    background: var(--white-color);
+}
+.ad-card a, .ad-card svg{
+    text-decoration: none;
+    color: var(--blue-color);
+    fill: var(--blue-color);
     text-align: center;
 }
+
+/*-----------CREATE AD FORM------------*/
+#create-ad{
+    width: 500px;
+}
+
+
