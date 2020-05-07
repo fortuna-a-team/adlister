@@ -21,7 +21,7 @@ public class CreateAdImageServlet extends HttpServlet {
         }
         // user made request for /ads/images?adid=7
         long adId = Long.parseLong(request.getParameter("adid"));
-        request.setAttribute("adid", adId);
+        request.setAttribute("adid", adId); // (what is being set, passed in)
         request.getRequestDispatcher("/WEB-INF/ads/adImage.jsp")
                 .forward(request, response);
     }

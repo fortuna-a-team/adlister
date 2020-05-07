@@ -22,6 +22,11 @@ public class AdServlet extends HttpServlet {
         } else {
             // Display the ad info given the ID
             long id = Long.parseLong(request.getParameter("id"));
+
+            request.setAttribute("ad_img", DaoFactory.getAdImagesDao().getImagesByAdId(id).get(0) );
+            // (start here, get the image dao, get the image list, get the first image "indexed at 0")
+            System.out.println(DaoFactory.getAdImagesDao().getImagesByAdId(id).get(0));
+
             request.setAttribute("ad", DaoFactory.getAdsDao().getAdById(id));
             request.getRequestDispatcher("/WEB-INF/ads/ad.jsp").forward(request, response);
         }

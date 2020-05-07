@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class MySQLAdImagesDao implements AdImages {
+
     private Connection connection = null;
 
     public MySQLAdImagesDao(Config config) {

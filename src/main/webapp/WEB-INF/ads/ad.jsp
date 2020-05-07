@@ -10,6 +10,8 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
     <div class="col-md-6">
+        <img src="${ad_img.path}" alt="">
+
         <h2>${ad.title}</h2>
         <h4>Location</h4>
         <p>${ad.location}</p>
