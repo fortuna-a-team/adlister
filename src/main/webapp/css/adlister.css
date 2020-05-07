@@ -20,41 +20,61 @@ body{
 }
 
 .content-body{
-    margin-left: 25%;
+    margin-left: 40%;
     padding: 100px 16px;
     height: 1000px;
 }
 
 /*-----------NAVBAR------------*/
-ul {
+.navbar {
     z-index: 2; /* Keep the nav on top of everything */
-    list-style-type: none;
-    margin: 0;
-    padding: 30px;
-    background-color: var(--white-color);
+    height: 100vh; /* Full height */
+    position: fixed; /* Make it stick, even on scroll */
+    overflow: auto; /* Enable scrolling if the sidenav has too much content */
 
     display: flex;
     flex-direction: column;
 
-    height: 100vh; /* Full height */
-    position: fixed; /* Make it stick, even on scroll */
-    overflow: auto; /* Enable scrolling if the sidenav has too much content */
+    margin: 0;
+    padding: 0;
+    width: 200px;
+
+    background-color: var(--lightBlue-color);
 }
 
-li {
+#navbar-logo a{
     float: left;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+
+    font-size: calc(15px + (30 - 15) * ((100vw - 300px) / (1600 - 300)));
+    /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+    color: var(--blue-color);
+    font-family: 'DM Serif Text', serif;
+    line-height: calc(15px + (31 - 15) * ((100vw - 300px) / (1600 - 300)));
+    text-decoration: none;
 }
 
-li a {
+.navbar ul {
+    float: left;
+    margin: 0;
+    padding: 0;
+
+    list-style-type: none;
+}
+
+.navbar ul li a {
     display: block;
-    color: var(--white-color);
+    color: var(--blue-color);
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
 }
 
-li a:hover {
-    background-color: var(--lightBlue-color);
+.navbar ul li a:hover {
+    background-color: var(--blue-color);
+    color: var(--white-color);
 }
 
 #logout-link{
@@ -240,8 +260,12 @@ input[type="submit"]:hover{
 /*------when the browser window is 600px wide or less------*/
 /*---------------------------------------------------------*/
 @media only screen and (max-width: 768px) {
-
-
+    .navbar ul li a {
+        float: none;
+        display: block;
+        width: 100%;
+        text-align: left; /* If you want the text to be left-aligned on small screens */
+    }
 }
 
 

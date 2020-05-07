@@ -2,10 +2,13 @@
 <%----- BEGIN NAVBAR -----%>
 <nav class="navbar">
 
+    <%----- HOME NAV LINK -----%>
+    <li id="navbar-logo">
+        <a href="${pageContext.request.contextPath}/">AdLister</a>
+    </li>
+
     <%----- NAVBAR ITEM LIST -----%>
     <ul>
-        <%----- HOME NAV LINK -----%>
-        <li><a href="${pageContext.request.contextPath}/">Home</a></li>
 
         <%----- ADS NAV LINK -----%>
         <li><a href="${pageContext.request.contextPath}/ads">Ad Listings</a></li>
