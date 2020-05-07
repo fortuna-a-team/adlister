@@ -17,7 +17,7 @@ public class AdServlet extends HttpServlet {
         // Redirect to login page if not logged in
         // TODO: Change this later to be a modal with option to log in or register to view ad
         if (request.getSession().getAttribute("user") == null) {
-            response.sendRedirect("/login");
+            response.sendRedirect("/loginrequired");
             return;
         } else {
             // Display the ad info given the ID
