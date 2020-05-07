@@ -14,20 +14,24 @@ import java.io.IOException;
 //@WebServlet("/notifications/*")
 @WebServlet(name = "controllers.IndexServlet", urlPatterns = "/")
 public class IndexServlet extends HttpServlet {
+
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("ads", DaoFactory.getAdsDao().all());
-        request.getRequestDispatcher("/index.jsp").forward(request, response);
-    }
 
+        // Check if user is signed in. If not, do not display individual ad clicked -  we will prompt them to login or register.
 
+        if ((request.getParameter("button") != null) && (request.getSession().getAttribute("user") == null)){
+            response.sendRedirect("/login");
+            return;
+        }
 
-
-//        if (request.getSession().getAttribute("user") != null) {
-//            response.sendRedirect("/profile");
+//        if (request.getSession().getAttribute("user") == null) {
+//            response.sendRedirect("/login");
 //            return;
 //        }
-//        request.getRequestDispatcher("/WEB-INF/login.jsp").forward(request, response);
-//    }
 
+//       !!! NOTE: If you need to direct a user to another page based on session attributes (e.g. logged        in, etc.) do this BEFORE any other logic on the page! OR IT WON'T WORK. !!!
 
+        request.setAttribute("ads", DaoFactory.getAdsDao().all());
+        request.getRequestDispatcher("/WEB-INF/index.jsp").forward(request, response);
+    }
 }
