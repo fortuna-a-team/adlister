@@ -1,7 +1,9 @@
 package com.codeup.adlister.models;
 import java.sql.Timestamp;
+import java.text.DecimalFormat;
 
 public class Ad {
+
     private long id;
     private long userId;
     private String title;
