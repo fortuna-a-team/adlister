@@ -28,12 +28,6 @@
                 <p>${ad.category}</p>
                 <h4>Description</h4>
                 <p>${ad.description}</p>
-
-
-                <form method="POST" action="IndexServlet">
-                    <input onclick="button" type="submit" id="button" name="button"/>
-                </form>
-
             </div>
         </c:forEach>
     </div>
