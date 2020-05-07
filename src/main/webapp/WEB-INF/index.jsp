@@ -13,9 +13,10 @@
     </div>
 
     <div class="container">
-        <h1>Here Are all the ads!</h1>
+        <h1>Here are all the ads!</h1>
 
         <c:forEach var="ad" items="${ads}">
+        <a href="/ads/ad?id=${ad.id}">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <h4>Location</h4>
@@ -29,12 +30,8 @@
                 <h4>Description</h4>
                 <p>${ad.description}</p>
 
-
-                <form method="POST" action="IndexServlet">
-                    <input onclick="button" type="submit" id="button" name="button"/>
-                </form>
-
             </div>
+        </a>
         </c:forEach>
     </div>
 

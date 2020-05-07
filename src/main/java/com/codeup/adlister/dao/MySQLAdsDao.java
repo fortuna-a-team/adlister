@@ -63,6 +63,22 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Ad getAdById(long queryId) {
+        try {
+            String query = "SELECT * FROM ads WHERE id = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setLong(1, queryId);
+            ResultSet rs = stmt.executeQuery();
+            if(rs.next()) {
+                return extractAd(rs);
+            }
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        }
+        throw new IllegalArgumentException("Error: no ad exists by this ID.");
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException { // extract ads from the mysql table
         return new Ad(
                 rs.getLong("id"),
@@ -84,4 +100,6 @@ public class MySQLAdsDao implements Ads {
         }
         return ads;
     }
+
+
 }
