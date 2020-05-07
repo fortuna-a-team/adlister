@@ -4,6 +4,6 @@
       rel="stylesheet">
 
 <%-- ---- LINK TO CSS STYLESHEET ---- --%>
-<style type="text/css">
-    <%@ include file="/css/adlister.css" %>
-</style>
+<%--<style type="text/css">--%>
+<%--    <%@ include file="/css/adlister.css" %>--%>
+<%--</style>--%>

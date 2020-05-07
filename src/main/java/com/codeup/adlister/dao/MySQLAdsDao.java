@@ -80,6 +80,7 @@ public class MySQLAdsDao implements Ads {
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException { // extract ads from the mysql table
+        // must call rs.next on new resultSet before using this
         return new Ad(
                 rs.getLong("id"),
                 rs.getLong("user_id"),

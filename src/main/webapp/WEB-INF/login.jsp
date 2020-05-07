@@ -48,7 +48,7 @@
                 <div class="password">
                     <label for="pass"></label>
                     <input type="password" id="pass" name="password"
-                           minlength="8" required placeholder="Password">
+                           required placeholder="Password">
                 </div>
 
                 <%-- ---- SUBMIT BUTTON ---- --%>
