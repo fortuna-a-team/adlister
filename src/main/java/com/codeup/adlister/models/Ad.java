@@ -7,6 +7,7 @@ public class Ad {
     private long id;
     private long userId;
     private String title;
+    private String img_path;
     private double price;
     private String item_condition;
     private String category;
@@ -14,13 +15,15 @@ public class Ad {
     private Timestamp created_at;
     private String description;
 
+
     public Ad() {
     }
 
-    public Ad(long id, long userId, String title, double price, String item_condition,  String category,String description, String location) {
+    public Ad(long id, long userId, String title, String img_path, double price, String item_condition,  String category,String description, String location) {
         this.id = id;
         this.userId = userId;
         this.title = title;
+        this.img_path = img_path;
         this.price = price;
         this.item_condition = item_condition;
         this.category = category;
@@ -28,9 +31,10 @@ public class Ad {
         this.description = description;
     }
 
-    public Ad(long userId, String title, double price, String item_condition, String category, String description, String location) {
+    public Ad(long userId, String title, String img_path, double price, String item_condition, String category, String description, String location) {
         this.userId = userId;
         this.title = title;
+        this.img_path = img_path;
         this.price = price;
         this.item_condition = item_condition;
         this.category = category;
@@ -45,6 +49,14 @@ public class Ad {
 
     public void setItem_condition(String item_condition) {
         this.item_condition = item_condition;
+    }
+
+    public String getImg_path() {
+        return img_path;
+    }
+
+    public void setImg_path(String img_path) {
+        this.img_path = img_path;
     }
 
     public double getPrice() {

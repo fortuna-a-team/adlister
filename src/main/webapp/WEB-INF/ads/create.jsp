@@ -24,6 +24,12 @@
                 <input id="title" name="title" class="form-control" type="text">
             </div>
 
+            <%---------AD TITLE--------%>
+            <div class="form-group">
+                <label for="img_path">Image</label>
+                <input id="img_path" name="img_path" class="form-control" type="text">
+            </div>
+
             <%---------AD PRICE--------%>
             <div class="form-group">
                 <label for="price">Price</label>

@@ -17,7 +17,7 @@
 
         <c:forEach var="ad" items="${ads}">
         <a href="/ads/ad?id=${ad.id}">
-            <img src="${ad_img.path}" alt="">
+            <img src="${ad.img_path}" alt="">
             <div class="col-md-6">
                 <h2>${ad.title}</h2>
                 <h4>Location</h4>

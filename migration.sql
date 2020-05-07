@@ -25,6 +25,7 @@ CREATE TABLE ads (
     description TEXT NOT NULL,
     location VARCHAR(240) NOT NULL,
     created_at TIMESTAMP,
+    img_path TEXT,
     PRIMARY KEY (id),
     FOREIGN KEY (user_id) REFERENCES users(id)
         ON DELETE CASCADE
@@ -35,11 +36,11 @@ ALTER TABLE ads
         TIMESTAMP DEFAULT CURRENT_TIMESTAMP
         ON UPDATE CURRENT_TIMESTAMP;
 
-CREATE TABLE ad_images (
-    id INT UNSIGNED NOT NULL AUTO_INCREMENT,
-    path VARCHAR(255) NOT NULL,
-    ad_id INT UNSIGNED NOT NULL,
-    PRIMARY KEY (id),
-    FOREIGN KEY (ad_id) REFERENCES ads(id)
-        ON DELETE CASCADE
-)
+# CREATE TABLE ad_images (
+#     id INT UNSIGNED NOT NULL AUTO_INCREMENT,
+#     path VARCHAR(255) NOT NULL,
+#     ad_id INT UNSIGNED NOT NULL,
+#     PRIMARY KEY (id),
+#     FOREIGN KEY (ad_id) REFERENCES ads(id)
+#         ON DELETE CASCADE
+# )

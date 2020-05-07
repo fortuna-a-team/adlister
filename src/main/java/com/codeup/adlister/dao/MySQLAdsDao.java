@@ -41,16 +41,17 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, price, item_condition, category, description, location) VALUES (?, ?, ?, ?,?,?,?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, img_path, price, item_condition, category, description, location) VALUES (?, ?, ?, ?,?,?,?,?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setLong(1, ad.getUserId());
             stmt.setString(2, ad.getTitle());
-            stmt.setDouble(3, ad.getPrice());
-            stmt.setString(4, ad.getItem_condition());
-            stmt.setString(5, ad.getCategory());
-            stmt.setString(6, ad.getDescription());
-            stmt.setString(7, ad.getLocation());
+            stmt.setString(3, ad.getImg_path());
+            stmt.setDouble(4, ad.getPrice());
+            stmt.setString(5, ad.getItem_condition());
+            stmt.setString(6, ad.getCategory());
+            stmt.setString(7, ad.getDescription());
+            stmt.setString(8, ad.getLocation());
 
             System.out.println(stmt);
             stmt.executeUpdate();
@@ -85,6 +86,7 @@ public class MySQLAdsDao implements Ads {
                 rs.getLong("id"),
                 rs.getLong("user_id"),
                 rs.getString("title"),
+                rs.getString("img_path"),
                 rs.getInt("price"),
                 rs.getString("item_condition"),
                 rs.getString("category"),
