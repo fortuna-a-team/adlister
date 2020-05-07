@@ -6,11 +6,24 @@
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-    <div class="container">
-        <h1>Welcome, ${sessionScope.user.first_name}!</h1>
-    </div>
+<article class="content-body">
+    <section class="user-profile">
+
+        <%-- ---- PROFILE ---- --%>
+        <img src="../img/charles-deluvio-K4mSJ7kc0As-unsplash.jpg" alt="User image placeholder" id="user-img">
+        <h2>Welcome back ${sessionScope.user.first_name}!</h2>
+        <h4>Bio</h4>
+        <p>
+            I'm baby vinyl VHS knausgaard, heirloom neutra vice flannel ugh. Viral drinking vinegar salvia, thundercats
+            everyday carry scenester meh fashion axe sriracha.
+            Keytar tote bag XOXO twee occupy, etsy glossier humblebrag. Tofu portland helvetica venmo flannel deep v
+            blog, cred cray gochujang.
+        </p>
+
+    </section>
+</article>
 
 </body>
 </html>
