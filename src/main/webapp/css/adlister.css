@@ -27,11 +27,11 @@ body{
 
 /*-----------NAVBAR------------*/
 ul {
-    z-index: 2;
+    z-index: 2; /* Keep the nav on top of everything */
     list-style-type: none;
     margin: 0;
     padding: 30px;
-    background-color: var(--blue-color);
+    background-color: var(--white-color);
 
     display: flex;
     flex-direction: column;
@@ -166,7 +166,10 @@ input[type="submit"]:hover{
     padding: 150px 50px;
 }
 .hello-world-section h1{
-    font-size: 3em;
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+    color: var(--blue-color);
+    font-family: 'DM Serif Text', serif;
     margin: 10px 0;
 }
 .hello-world-section p{
@@ -231,6 +234,14 @@ input[type="submit"]:hover{
 /*-----------CREATE AD FORM------------*/
 #create-ad{
     width: 500px;
+}
+
+/*---------------------------------------------------------*/
+/*------when the browser window is 600px wide or less------*/
+/*---------------------------------------------------------*/
+@media only screen and (max-width: 768px) {
+
+
 }
 
 
