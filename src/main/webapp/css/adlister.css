@@ -287,13 +287,13 @@ input[type="submit"]:hover {
 }
 
 /*-----------REGISTER PAGE------------*/
-.register-container {
+.register-container, .create-container{
     background: var(--darkerCream-color);
     height: auto;
     width: 50%;
 }
 
-.register-form {
+.register-form, .create-form {
     display: flex;
     flex-direction: column;
     padding: 15%;

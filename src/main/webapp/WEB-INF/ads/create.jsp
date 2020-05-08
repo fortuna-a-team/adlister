@@ -20,7 +20,8 @@
         <h1>Create a New Ad</h1>
 
         <%---------CREATE AD FORM--------%>
-        <form action="/ads/create" method="post">
+        <div class="create-container">
+        <form action="/ads/create" method="post" class="create-form">
 
             <%---------AD TITLE--------%>
             <div class="form-group">
@@ -70,6 +71,7 @@
             <%---------AD SUBMIT BUTTON--------%>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
+        </div>
     </section>
 </article>
 
