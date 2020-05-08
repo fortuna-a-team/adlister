@@ -12,17 +12,24 @@
 /*---------------------------------------------------------*/
 /*----------------------INDEX (HOME) PAGE------------------*/
 /*---------------------------------------------------------*/
-body{
+body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
     background: #ffffff;
 }
 
-.content-body{
+.content-body {
     margin-left: 25%;
     padding: 100px 16px;
     height: 1000px;
+}
+.content-header h1{
+    font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
+    /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
+    color: var(--blue-color);
+    font-family: 'DM Serif Text', serif;
+    margin: 10px 0;
 }
 
 /*-----------NAVBAR------------*/
@@ -42,12 +49,7 @@ body{
     background-color: var(--lightBlue-color);
 }
 
-#navbar-logo a{
-    float: left;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-
+#navbar-logo a {
     font-size: calc(15px + (30 - 15) * ((100vw - 300px) / (1600 - 300)));
     /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
     color: var(--blue-color);
@@ -74,11 +76,11 @@ body{
 }
 
 .navbar ul li a:hover {
-    background-color: var(--white-color);
+    background-color: #ffffff;
     /*color: var(--white-color);*/
 }
 
-#logout-link{
+#logout-link {
     color: var(--red-color);
 }
 
@@ -90,7 +92,8 @@ body{
     float: right;
     border: var(--lightBlue-color) solid 1px;
 }
-.search-navbar{
+
+.search-navbar {
     position: fixed;
     top: 0;
     left: 0;
@@ -98,7 +101,8 @@ body{
     height: 50px;
 
 }
-#filter-icon{
+
+#filter-icon {
     height: 30px;
     width: auto;
     float: right;
@@ -109,13 +113,13 @@ body{
 .login-all {
     padding-top: 100px;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, 1fr); /*center the login form*/
     grid-template-rows: 1fr;
     grid-column-gap: 0px;
     grid-row-gap: 0px;
 }
 
-input[type="text"],input[type="password"] {
+input[type="text"], input[type="password"], input[type="tel"] {
     display: block;
     width: 309px;
     height: 35px;
@@ -130,11 +134,11 @@ input[type="text"],input[type="password"] {
     -webkit-border-radius: 5px;
 }
 
-input[type="text"]:focus, input[type="password"]:focus{
+input[type="text"]:focus, input[type="password"]:focus, input[type="tel"]:focus{
     border: 2px solid var(--blue-color);
 }
 
-input[type="submit"]{
+input[type="submit"] {
     display: block;
     background: var(--blue-color);
     width: 314px;
@@ -150,16 +154,15 @@ input[type="submit"]{
     transition: all 0.3s ease;
 }
 
-input[type="submit"]:hover{
+input[type="submit"]:hover {
     background: var(--lightBlue-color);
     color: var(--blue-color);
 }
 
 
-
 /*-----------LOGIN SECTION------------*/
 
-.login-card{
+.login-card {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: 1fr;
@@ -174,87 +177,74 @@ input[type="submit"]:hover{
     margin: 50px;
 }
 
-.login-section{
+.login-section {
     color: var(--white-color);
     background: var(--blue-color);
     padding: 180px 50px;
 }
 
-
 /*-----------HELLO WORLD SECTION------------*/
-.hello-world-section{
+.hello-world-section {
     background: var(--lightBlue-color);
     padding: 150px 50px;
 }
-.hello-world-section h1{
+
+.hello-world-section h1 {
     font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
     /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
     color: var(--blue-color);
     font-family: 'DM Serif Text', serif;
     margin: 10px 0;
 }
-.hello-world-section p{
+
+.hello-world-section p {
     margin-bottom: 50px;
 }
 
-/*-----------SOCIAL------------*/
-#social-btns{
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-}
-#facebook-btn{
-    background: #3b5998;
-    margin: 20px 0;
-    width: 160px;
-}
-#google-btn{
-    background: #de5246;
-    margin: 20px 0;
-    width: 160px;
+/*-----------REGISTER PAGE------------*/
+.register-container {
+    background: var(--lightBlue-color);
+    height: auto;
+    width: 50%;
 }
 
-#facebook-btn:hover{
-    background: #527cd5;
-    margin: 20px 0;
-}
-#google-btn:hover{
-    background: #fa5d50;
-    margin: 20px 0;
+.register-form {
+    display: flex;
+    flex-direction: column;
+    padding: 15%;
 }
 
 /*-----------USER PROFILE------------*/
-#user-img{
+#user-img {
     margin: 50px 0px;
     height: 150px;
     width: auto;
 }
-.user-profile, .personal-ad-listings{
+
+.user-profile, .personal-ad-listings {
     margin: 100px 50px;
     width: 500px;
 }
-#profile-header{
+
+#profile-header {
     font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
     /*font-size: calc([minimum size] + ([maximum size] - [minimum size]) * ((100vw - [minimum viewport width]) / ([maximum viewport width] - [minimum viewport width])));*/
     color: var(--blue-color);
     font-family: 'DM Serif Text', serif;
     line-height: calc(30px + (51 - 30) * ((100vw - 300px) / (1600 - 300)));
 }
-.ad-card{
+
+.ad-card {
     height: 200px;
     width: 300px;
     background: var(--white-color);
 }
-.ad-card a, .ad-card svg{
+
+.ad-card a, .ad-card svg {
     text-decoration: none;
     color: var(--blue-color);
     fill: var(--blue-color);
     text-align: center;
-}
-
-/*-----------CREATE AD FORM------------*/
-#create-ad{
-    width: 500px;
 }
 
 /*---------------------------------------------------------*/
