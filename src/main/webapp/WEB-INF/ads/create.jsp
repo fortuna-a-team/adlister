@@ -7,13 +7,17 @@
 </head>
 <body>
 
+<%----- NAVBAR -----%>
 <header>
     <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
 </header>
 
-<article id="create-ad">
-    <section id="create-form">
-        <h1>Create a new Ad</h1>
+<%----- MAIN ARTICLE -----%>
+<article>
+    <%----- SECTION -----%>
+    <section class="content-body">
+        <%----- SECTION TITLE -----%>
+        <h1>Create a New Ad</h1>
 
         <%---------CREATE AD FORM--------%>
         <form action="/ads/create" method="post">

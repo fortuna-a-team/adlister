@@ -11,12 +11,20 @@
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
 
 
-<section>
-    <h1>You need to be signed in to view this ad</h1>
-    <a href="/login">Login</a>
-    <h3>Don't have an account? Register here!</h3>
-    <a href="/register">Register</a>
+<section >
+    <article class="content-body">
+        <%----- LOGIN -----%>
+        <h1>You need to be signed in to view this ad</h1>
+        <a href="/login">
+            <input type="submit" id="login-btn" value="Login">
+        </a>
 
+        <%----- REGISTER -----%>
+        <h3>Don't have an account? Register here!</h3>
+        <a href="/register">
+            <input type="submit" id="register-btn" value="Register">
+        </a>
+    </article>
 </section>
 
 </body>

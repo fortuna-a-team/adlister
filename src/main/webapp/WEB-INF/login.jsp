@@ -7,8 +7,11 @@
     </jsp:include>
 </head>
 <body>
+
+<header>
 <%-- ---- LINK TO NAVBAR ---- --%>
 <%@ include file="/WEB-INF/partials/navbar.jsp" %>
+</header>
 
 <%-- ---- LOGIN FORM ---- --%>
 <article class="login-all">
@@ -26,9 +29,8 @@
             </p>
 
             <%-- ---- SOCIAL BUTTONS ---- --%>
-            <div id="social-btns">
-                <input type="submit" value="Facebook" id="facebook-btn">
-                <input type="submit" value="Google" id="google-btn">
+            <div id="register-btns">
+                <input type="submit" value="Register" id="register-btn">
             </div>
 
         </section>

@@ -15,7 +15,7 @@
     <section class="user-profile">
 
         <%-- ---- PROFILE ---- --%>
-        <img src="../img/charles-deluvio-K4mSJ7kc0As-unsplash.jpg" alt="User image placeholder" id="user-img">
+        <img src="img/charles-deluvio-K4mSJ7kc0As-unsplash.jpg" alt="User image placeholder" id="user-img">
         <h2 id="profile-header">Welcome back ${sessionScope.user.first_name}!</h2>
         <h4>Bio</h4>
         <p>
