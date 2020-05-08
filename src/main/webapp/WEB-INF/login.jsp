@@ -29,9 +29,9 @@
             </p>
 
             <%-- ---- SOCIAL BUTTONS ---- --%>
-            <div id="register-btns">
+            <a href="/register"><div id="register-btns">
                 <input type="submit" value="Register" id="register-btn">
-            </div>
+            </div></a>
 
         </section>
 
