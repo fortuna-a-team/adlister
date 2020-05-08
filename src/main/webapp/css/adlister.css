@@ -75,9 +75,9 @@ body {
 .card:hover {
     transition: .2s;
     transform: scale(1.05);
-    -webkit-box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
-    -moz-box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
-    box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
+    -webkit-box-shadow: 1px 17px 31px 0px rgba(181, 166, 158, 1);
+    -moz-box-shadow: 1px 17px 31px 0px rgba(181, 166, 158, 1);
+    box-shadow: 1px 17px 31px 0px rgba(181, 166, 158, 1);
 }
 
 /*-----------FULL CARDS (INDIVIDUAL ADS)------------*/
