@@ -3,38 +3,46 @@
 <html>
 <head>
     <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
+        <jsp:param name="title" value="Welcome to my site!"/>
     </jsp:include>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-    <div class="container">
-        <h1>Welcome to the Adlister!</h1>
-    </div>
+<header>
+    <jsp:include page="/WEB-INF/partials/navbar.jsp"/>
+</header>
 
-    <div class="container">
+<article>
+    <section class="content-body">
+        <div class="content-header">
+            <h1>Welcome to the Adlister!</h1>
+        </div>
+
         <h1>Here are all the ads!</h1>
-
         <c:forEach var="ad" items="${ads}">
-        <a href="/ads/ad?id=${ad.id}">
-            <img src="${ad.img_path}" alt="">
-            <div class="col-md-6">
-                <h2>${ad.title}</h2>
-                <h4>Location</h4>
-                <p>${ad.location}</p>
-                <h4>Price</h4>
-                <p>${ad.price}</p>
-                <h4>Condition</h4>
-                <p>${ad.item_condition}</p>
-                <h4>Category</h4>
-                <p>${ad.category}</p>
-                <h4>Description</h4>
-                <p>${ad.description}</p>
+            <div class="card">
+                <img src="${ad.img_path}" alt="" class="card-img">
+                <div class="card-body">
+                    <div class="card-body">
+                        <h2>${ad.title}</h2>
+                        <h4>Location</h4>
+                        <p>${ad.location}</p>
+                        <h4>Price</h4>
+                        <p>${ad.price}</p>
+                        <h4>Condition</h4>
+                        <p>${ad.item_condition}</p>
+                        <h4>Category</h4>
+                        <p>${ad.category}</p>
+                        <h4>Description</h4>
+                        <p>${ad.description}</p>
+                    </div>
+                    <a href="/ads/ad?id=${ad.id}">
+                        <input class="favorite styled" type="button" value="More Details">
+                    </a>
+                </div>
             </div>
-        </a>
         </c:forEach>
-    </div>
-
+    </section>
+</article>
 
 </body>
 </html>
