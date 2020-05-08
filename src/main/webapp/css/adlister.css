@@ -1,28 +1,34 @@
 :root {
     --yellow-color: #f2dc50;
-    --lightBlue-color: #d6efff;
-    --blue-color: #788bff;
-    --white-color: #f7fff7;
+    --darkerCream-color: #ebdfd8;
+    --blue-color: #26a0a0;
+    --cream-color: #fbede6;
     --red-color: #ff6b6b;
 
     /*font-family: 'Lato', sans-serif;*/
     /*font-family: 'DM Serif Text', serif;*/
 }
 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 /*---------------------------------------------------------*/
 /*----------------------INDEX (HOME) PAGE------------------*/
 /*---------------------------------------------------------*/
+
 body {
     margin: 0;
     padding: 0;
     font-family: 'Lato', sans-serif;
-    background: #ffffff;
+    background: var(--cream-color);
 }
 
 .content-body {
     margin-left: 25%;
     padding: 100px 16px;
-    height: 1000px;
+    /*height: 100%;*/
 }
 .content-header h1{
     font-size: calc(30px + (50 - 30) * ((100vw - 300px) / (1600 - 300)));
@@ -30,6 +36,85 @@ body {
     color: var(--blue-color);
     font-family: 'DM Serif Text', serif;
     margin: 10px 0;
+}
+
+/*-----------PREVIEW CARDS------------*/
+
+#card-container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: white;
+    border: 1px solid var(--darkerCream-color);
+    width: 275px;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 2em;
+    transition: .2s;
+    margin: 20px 20px 0 0;
+}
+
+.card-body {
+    padding: 0 30px 10px 30px;
+}
+
+.card-title {
+    margin-top: 5px;
+    font-size: 1rem;
+}
+
+.card .card-img {
+    object-fit: cover;
+    object-position: center; /* Center the image within the element */
+    width: 275px;
+    height: 200px;
+}
+
+.card:hover {
+    transition: .2s;
+    transform: scale(1.05);
+    -webkit-box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
+    -moz-box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
+    box-shadow: 1px 17px 31px 0px rgba(151,171,184,1);
+}
+
+/*-----------FULL CARDS (INDIVIDUAL ADS)------------*/
+
+.full-card {
+    width: 90%;
+    border-radius: 2em;
+    display: flex;
+    overflow: hidden;
+    background-color: white;
+}
+
+.full-card-body {
+    padding: 30px;
+    width: 100%;
+}
+
+.full-card-body > h4 {
+    margin-bottom: 0;
+}
+
+.full-card-body > p {
+    margin-top: 5px;
+}
+
+.full-card-title {
+    text-align: center;
+    font-family: 'DM Serif Text', serif;
+    margin-top: 5px;
+    font-size: 2rem;
+}
+
+.full-card .full-card-img {
+    object-fit: cover;
+    object-position: center; /* Center the image within the element */
+    width: 500px;
+    height: 100%;
 }
 
 /*-----------NAVBAR------------*/
@@ -46,7 +131,7 @@ body {
     padding: 0;
     width: 200px;
 
-    background-color: var(--lightBlue-color);
+    background-color: var(--darkerCream-color);
 }
 
 #navbar-logo a {
@@ -77,7 +162,7 @@ body {
 
 .navbar ul li a:hover {
     background-color: #ffffff;
-    /*color: var(--white-color);*/
+    /*color: var(--cream-color);*/
 }
 
 #logout-link {
@@ -90,7 +175,7 @@ body {
     width: 300px;
     margin: 20px;
     float: right;
-    border: var(--lightBlue-color) solid 1px;
+    border: var(--darkerCream-color) solid 1px;
 }
 
 .search-navbar {
@@ -144,7 +229,7 @@ input[type="submit"] {
     width: 314px;
     padding: 12px;
     cursor: pointer;
-    color: var(--white-color);
+    color: var(--cream-color);
     border: 0px;
     margin: auto;
     border-radius: 5px;
@@ -155,7 +240,7 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-    background: var(--lightBlue-color);
+    background: var(--darkerCream-color);
     color: var(--blue-color);
 }
 
@@ -178,14 +263,14 @@ input[type="submit"]:hover {
 }
 
 .login-section {
-    color: var(--white-color);
+    color: var(--cream-color);
     background: var(--blue-color);
     padding: 180px 50px;
 }
 
 /*-----------HELLO WORLD SECTION------------*/
 .hello-world-section {
-    background: var(--lightBlue-color);
+    background: var(--darkerCream-color);
     padding: 150px 50px;
 }
 
@@ -203,7 +288,7 @@ input[type="submit"]:hover {
 
 /*-----------REGISTER PAGE------------*/
 .register-container {
-    background: var(--lightBlue-color);
+    background: var(--darkerCream-color);
     height: auto;
     width: 50%;
 }
@@ -237,7 +322,7 @@ input[type="submit"]:hover {
 .ad-card {
     height: 200px;
     width: 300px;
-    background: var(--white-color);
+    background: var(--cream-color);
 }
 
 .ad-card a, .ad-card svg {

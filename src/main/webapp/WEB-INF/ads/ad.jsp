@@ -19,10 +19,12 @@
     <section class="content-body">
 
         <%----- CARDS -----%>
-        <div class="card">
-            <h2 class="card-title">${ad.title}</h2>
-            <img src="${ad.img_path}" alt="ad-image" class="card-img">
-            <div class="card-body">
+        <div class="full-card">
+            <div class="left-ad-container">
+                <img src="${ad.img_path}" alt="ad-image" class="full-card-img">
+            </div>
+            <div class="full-card-body">
+                <h2 class="full-card-title">${ad.title}</h2>
                 <h4>Location</h4>
                 <p>${ad.location}</p>
                 <h4>Price</h4>

@@ -8,7 +8,7 @@
         <li id="navbar-logo"><a href="${pageContext.request.contextPath}/">AdLister</a></li>
 
         <%----- ADS NAV LINK -----%>
-        <li><a href="${pageContext.request.contextPath}/ads">Ad Listings</a></li>
+        <li><a href="${pageContext.request.contextPath}/">Ad Listings</a></li>
 
         <%----- LOGIN / LOGOUT CONDITIONAL -----%>
         <c:choose>

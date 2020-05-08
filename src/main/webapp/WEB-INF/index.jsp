@@ -15,32 +15,23 @@
     <section class="content-body">
         <div class="content-header">
             <h1>Welcome to the Adlister!</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dicta doloribus eius et fugiat laboriosam neque nihil obcaecati odit officia placeat, porro praesentium reiciendis similique sint tempore voluptate voluptatibus voluptatum!</p>
         </div>
 
-        <h1>Here are all the ads!</h1>
+        <h2 style="margin-top:2em">Check out our listings:</h2>
+        <div id="card-container">
         <c:forEach var="ad" items="${ads}">
-            <div class="card">
-                <img src="${ad.img_path}" alt="" class="card-img">
-                <div class="card-body">
+            <a href="/ads/ad?id=${ad.id}">
+                <div class="card">
+                    <img src="${ad.img_path}" alt="" class="card-img">
                     <div class="card-body">
-                        <h2>${ad.title}</h2>
-                        <h4>Location</h4>
-                        <p>${ad.location}</p>
-                        <h4>Price</h4>
-                        <p>${ad.price}</p>
-                        <h4>Condition</h4>
-                        <p>${ad.item_condition}</p>
-                        <h4>Category</h4>
-                        <p>${ad.category}</p>
-                        <h4>Description</h4>
-                        <p>${ad.description}</p>
+                        <h2 class="card-title">${ad.title} | ${ad.location}</h2>
+                        <p>$${ad.price}</p>
                     </div>
-                    <a href="/ads/ad?id=${ad.id}">
-                        <input class="favorite styled" type="button" value="More Details">
-                    </a>
                 </div>
-            </div>
+            </a>
         </c:forEach>
+        </div>
     </section>
 </article>
 
