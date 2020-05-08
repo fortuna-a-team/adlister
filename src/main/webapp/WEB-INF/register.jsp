@@ -17,56 +17,53 @@
     <%----- SECTION BEGIN -----%>
     <section class="content-body">
 
+        <h1>Enter Your Account Details</h1>
+
         <%----- REGISTER FORM -----%>
-        <div class="container">
-            <h1>Please fill in your information.</h1>
-            <form action="/register" method="post">
+        <div class="register-container">
+            <form action="/register" method="post" class="register-form">
 
                 <%----- USERNAME -----%>
-                <div class="form-group">
-                    <label for="username">Username<sup>*</sup></label>
-                    <input id="username" name="username" class="form-control" type="text">
-                </div>
+                <label for="username">Username<sup>*</sup></label>
+                <input id="username" name="username" class="form-control" type="text">
 
                 <%----- FIRST NAME -----%>
-                <div class="form-group">
-                    <label for="firstName">First name<sup>*</sup></label>
-                    <input id="firstName" name="first_name" class="form-control" type="text">
-                </div>
+                <label for="firstName">First name<sup>*</sup></label>
+                <input id="firstName" name="first_name" class="form-control" type="text">
+
 
                 <%----- LAST NAME-----%>
-                <div class="form-group">
-                    <label for="lastName">Last name<sup>*</sup></label>
-                    <input id="lastName" name="last_name" class="form-control" type="text">
-                </div>
+
+                <label for="lastName">Last name<sup>*</sup></label>
+                <input id="lastName" name="last_name" class="form-control" type="text">
+
 
                 <%----- EMAIL -----%>
-                <div class="form-group">
-                    <label for="email">Email<sup>*</sup></label>
-                    <input id="email" name="email" class="form-control" type="text">
-                </div>
+
+                <label for="email">Email<sup>*</sup></label>
+                <input id="email" name="email" class="form-control" type="text">
+
 
                 <%----- PHONE NUMBER -----%>
-                <div class="form-group">
-                    <label for="phoneNumber">Phone number*</label>
-                    <input id="phoneNumber" name="phone_number" class="form-control" type="tel">
-                </div>
+
+                <label for="phoneNumber">Phone number*</label>
+                <input id="phoneNumber" name="phone_number" class="form-control" type="tel">
+
 
                 <%----- PASSWORD -----%>
-                <div class="form-group">
-                    <label for="password">Password<sup>*</sup></label>
-                    <input id="password" name="password" class="form-control" type="password">
-                </div>
+
+                <label for="password">Password<sup>*</sup></label>
+                <input id="password" name="password" class="form-control" type="password">
+
 
                 <%----- CONFIRM PASSWORD -----%>
-                <div class="form-group">
-                    <label for="confirm_password">Confirm Password<sup>*</sup></label>
-                    <input id="confirm_password" name="confirm_password" class="form-control" type="password">
-                </div>
 
-                * = required field
-                <br/>
-                <br/>
+                <label for="confirm_password">Confirm Password<sup>*</sup></label>
+                <input id="confirm_password" name="confirm_password" class="form-control" type="password">
+
+
+                <p><em>* = required field</em></p>
+
                 <input type="submit" id="register-btn" value="Register">
             </form>
         </div>
