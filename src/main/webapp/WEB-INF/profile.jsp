@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -29,14 +30,42 @@
 
     <%-- ---- USER AD LISTINGS ---- --%>
     <section class="personal-ad-listings">
-        <div class="ad-card">
+
+        <div id="card-container">
+
+            <%-- ---- USER NEW AD ---- --%>
             <a href="${pageContext.request.contextPath}/ads/create">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
-                    <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
-                </svg>
-                <p>Create a New Ad</p>
+                <div class="card">
+                    <div class="card-img">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+                            <path d="M12 2c5.514 0 10 4.486 10 10s-4.486 10-10 10-10-4.486-10-10 4.486-10 10-10zm0-2c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6 13h-5v5h-2v-5h-5v-2h5v-5h2v5h5v2z"/>
+                        </svg>
+                    </div>
+                    <div class="card-title">
+                        <h2>Create a New Ad</h2>
+                    </div>
+                </div>
             </a>
+
+        <%-- ---- USER ADS ---- --%>
+            <c:forEach var="ad" items="${userAds}">
+                <a href="/profile/ad?id=${ad.id}">
+                    <div class="card">
+                        <img src="${ad.img_path}" alt="" class="card-img">
+                        <div class="card-body">
+                            <h2 class="card-title">${ad.title} | ${ad.location}</h2>
+                            <p>$${ad.price}</p>
+                            <form action="/profile/delete" method="post">
+                                <input type="hidden" name="ad_id" value="${ad.id}">
+                                <input class="delete-btn" type="submit" value="Delete">
+                            </form>
+                        </div>
+                    </div>
+                </a>
+            </c:forEach>
+
         </div>
+
     </section>
 </article>
 

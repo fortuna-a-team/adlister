@@ -17,10 +17,20 @@ public class ListAdsDao implements Ads {
     }
 
     @Override
+    public List<Ad> getAdByUserId(long user_id) {
+        return null;
+    }
+
+    @Override
     public List<Ad> getBySearchTerm(String search) {
 //        List<Ad> ads = new ArrayList<>();
 //        return ads;
         return null;
+    }
+
+    @Override
+    public void deleteAdById(long id) {
+
     }
 
     public Long insert(Ad ad) {

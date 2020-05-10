@@ -5,6 +5,7 @@ import com.codeup.adlister.models.Ad;
 import java.util.List;
 
 public interface Ads {
+
     // get a list of all the ads
     List<Ad> all();
 
@@ -14,5 +15,13 @@ public interface Ads {
     // return an ad object through passing in the ad id
     Ad getAdById(long id);
 
+    // return list of ads that include searched term
     List<Ad> getBySearchTerm(String search);
+
+    // remove ad by the ad id
+    void deleteAdById (long id);
+
+    // find all the ads by a specific user
+    List<Ad> getAdByUserId(long user_id);
+
 }

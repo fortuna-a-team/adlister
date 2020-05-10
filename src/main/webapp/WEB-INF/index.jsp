@@ -18,7 +18,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque dicta doloribus eius et fugiat laboriosam neque nihil obcaecati odit officia placeat, porro praesentium reiciendis similique sint tempore voluptate voluptatibus voluptatum!</p>
         </div>
 
-        <h2 style="margin-top:2em">Check out our listings:</h2>
         <div id="card-container">
         <c:forEach var="ad" items="${ads}">
             <a href="/ads/ad?id=${ad.id}">
