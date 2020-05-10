@@ -16,7 +16,7 @@ public class MySQLAdsDao implements Ads {
     public MySQLAdsDao(Config config) {
         try {
             DriverManager.registerDriver(new Driver());
-            connection = DriverManager.getConnection(
+            connection = DriverManager.getConnection(// Get the information from the Config file
                     config.getUrl(),
                     config.getUser(),
                     config.getPassword()
@@ -78,6 +78,25 @@ public class MySQLAdsDao implements Ads {
             System.out.println(e.getMessage());
         }
         throw new IllegalArgumentException("Error: no ad exists by this ID.");
+    }
+
+    @Override
+    public List<Ad> getBySearchTerm(String search) {
+        try {
+            String query = "SELECT * FROM ads WHERE title LIKE ? OR description LIKE ?"; // get all ads with related title or description from user search term
+
+            PreparedStatement stmt = connection.prepareStatement(query); // prepare the statement
+
+            stmt.setString(1, "%" + search + "%"); // fill in the first ? in query
+            stmt.setString(2, "%" + search + "%"); // fill in the second ? in query
+
+            ResultSet rs = stmt.executeQuery(); // execute the query
+
+            return createAdsFromResults(rs); // return a list of results
+
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("Error: no ad exists by this search term.");
+        }
     }
 
     private Ad extractAd(ResultSet rs) throws SQLException { // extract ads from the mysql table

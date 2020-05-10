@@ -26,5 +26,8 @@
 
 <%----- SEARCH BAR -----%>
 <nav class="search-navbar">
+    <form action="/search" method="get">
+    <label for="search"></label>
     <input type="text" value="" placeholder="Search Ads..." name="search" id="search" class="search-field">
+    </form>
 </nav>
