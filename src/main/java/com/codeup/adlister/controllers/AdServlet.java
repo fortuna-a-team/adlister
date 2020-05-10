@@ -19,6 +19,7 @@ public class AdServlet extends HttpServlet {
         if (request.getSession().getAttribute("user") == null) {
             response.sendRedirect("/login");
             return;
+
         } else {
             // Display the ad info given the ID
             long id = Long.parseLong(request.getParameter("id"));

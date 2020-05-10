@@ -1,6 +1,7 @@
 package com.codeup.adlister.dao;
 
 import com.codeup.adlister.models.Ad;
+import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.io.FileInputStream;
@@ -41,7 +42,7 @@ public class MySQLAdsDao implements Ads {
     @Override
     public Long insert(Ad ad) {
         try {
-            String insertQuery = "INSERT INTO ads(user_id, title, img_path, price, item_condition, category, description, location) VALUES (?, ?, ?, ?,?,?,?,?)";
+            String insertQuery = "INSERT INTO ads(user_id, title, img_path, price, item_condition, category, description, location) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
             PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
 
             stmt.setLong(1, ad.getUserId());
@@ -89,6 +90,43 @@ public class MySQLAdsDao implements Ads {
 
             stmt.setString(1, "%" + search + "%"); // fill in the first ? in query
             stmt.setString(2, "%" + search + "%"); // fill in the second ? in query
+
+            ResultSet rs = stmt.executeQuery(); // execute the query
+
+            return createAdsFromResults(rs); // return a list of results
+
+        } catch (SQLException e) {
+            throw new IllegalArgumentException("Error: no ad exists by this search term.");
+        }
+    }
+
+    @Override
+    public void deleteAdById(long id) {
+        try {
+//            User user = (User) req.getSession().getAttribute("user"); //get the session user's id
+//            if ( user.getId() == Ad.getAdUSer()) // if the user matches the ad user -->
+
+            String insertQuery = "DELETE FROM ads WHERE id = ?"; // delete the ad from the table at id of ?
+
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS); // prepare statement
+
+            stmt.setLong(1, id); // set the ? in query to the ad id selected
+
+            stmt.executeUpdate(); // execute
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error deleting ad #" + id, e);
+        }
+    }
+
+    @Override
+    public List<Ad> getAdByUserId(long user_id) {
+        try {
+            String query = "SELECT * FROM ads WHERE user_id LIKE ?"; // get all ads with related title or description from user search term
+
+            PreparedStatement stmt = connection.prepareStatement(query); // prepare the statement
+
+            stmt.setString(1, "%" + user_id + "%"); // fill in the first ? in query
 
             ResultSet rs = stmt.executeQuery(); // execute the query
 
