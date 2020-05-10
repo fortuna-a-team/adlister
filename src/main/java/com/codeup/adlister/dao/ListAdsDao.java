@@ -16,6 +16,13 @@ public class ListAdsDao implements Ads {
         return ads;
     }
 
+    @Override
+    public List<Ad> getBySearchTerm(String search) {
+//        List<Ad> ads = new ArrayList<>();
+//        return ads;
+        return null;
+    }
+
     public Long insert(Ad ad) {
         // make sure we have ads
         if (ads == null) {

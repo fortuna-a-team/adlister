@@ -13,4 +13,6 @@ public interface Ads {
 
     // return an ad object through passing in the ad id
     Ad getAdById(long id);
+
+    List<Ad> getBySearchTerm(String search);
 }
